@@ -98,15 +98,69 @@
 
 
 #=====================================
-class A:
-    def process(self):
-        return "A"
-class B(A):
-    def process(self):
-        return "B"
-class C(A):
-    def process(self):
-        return "C"
-class D(B, C):
-    pass
-print(D().process())
+# class A:
+#     def process(self):
+#         return "A"
+# class B(A):
+#     def process(self):
+#         return "B"
+# class C(A):
+#     def process(self):
+#         return "C"
+# class D(B, C):
+#     pass
+# print(D().process())
+
+
+
+#=====================================
+#LAB TASK
+# with open("task.txt", "w") as file:
+#     file.write("Hello World! \nThis is Salman here")
+#     file.write("\nFrom UOL")
+# with open("task.txt","r") as file:
+#     contents=file.read()
+#     print("File contents",contents)
+
+
+
+#============================================
+def read_file(file_name):
+    
+    with open(file_name, 'r') as f:
+        file_contents = f.read()
+        print(file_contents)
+        return file_contents
+
+def read_file_into_list(file_name):
+ 
+    with open(file_name, 'r') as f:
+        file_list = f.readlines()
+        return file_list
+
+def write_first_line_to_file(file_contents, output_filename):
+
+    first_line = file_contents.split('\n')[0]
+    with open(output_filename, 'w') as f:
+        f.write(first_line)
+
+def read_even_numbered_lines(file_name):
+
+    with open(file_name, 'r') as f:
+        file_list = f.readlines()
+        even_numbered_lines = file_list[::2]
+        return even_numbered_lines
+
+def read_file_in_reverse(file_name):
+  
+    with open(file_name, 'r') as f:
+        file_list = f.readlines()
+        file_list.reverse()
+        print(file_list)
+        return file_list
+def main():
+    file_contents = read_file("sampletext.txt")
+    print(read_file_into_list("sampletext.txt"))
+    write_first_line_to_file(file_contents, "online.txt")
+
+
